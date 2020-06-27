@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         for (us in queryUsageStats) {
             Log.d("MainActivity", "Next UsageStats: ${us.packageName}")
-            if (us.totalTimeInForeground > 0) {
+            if (us.totalTimeInForeground > 0 && !us.packageName.contains("nexuslauncher")) {
                 tvData.append("${us.packageName}\t${us.totalTimeInForeground}\n")
             }
         }
